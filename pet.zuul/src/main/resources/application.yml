@@ -1,0 +1,26 @@
+server: 
+  port: 6666
+ 
+spring: 
+  application:
+    name: pet-zuul
+ 
+eureka: 
+  client: 
+    service-url: 
+      defaultZone: http://localhost:8888/eureka
+  instance:
+    instance-id: petZuul.com
+    prefer-ip-address: true 
+ 
+zuul: 
+  ignored-services: "*"
+  prefix: /pet
+  routes: 
+    mydept.serviceId: pet-service
+    mydept.path: /**
+
+ 
+info:
+  app.name: sgf
+  company.name: www.sgf.com

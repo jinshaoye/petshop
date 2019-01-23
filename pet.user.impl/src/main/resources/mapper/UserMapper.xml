@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sgf.pet.user.dao.UserMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="User">
+        <id column="ID" property="id" />
+        <result column="CREATE_DATE" property="createDate" />
+        <result column="UPDATE_DATE" property="updateDate" />
+        <result column="STATUS" property="status" />
+        <result column="USER_NAME" property="userName" />
+        <result column="PASSWORD" property="password" />
+        <result column="TYPE" property="type" />
+        <result column="PRIVILEGE" property="privilege" />
+        <result column="PHONE" property="phone" />
+        <result column="NAME" property="name" />
+        <result column="HEAD_PIC" property="headPic" />
+        <result column="ACCOUNT_BALANCE" property="accountBalance" />
+        <result column="SEX" property="sex" />
+        <result column="EMAIL" property="email" />
+        <result column="CHANGE_TYPE" property="changeType" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, CREATE_DATE, UPDATE_DATE, STATUS, USER_NAME, PASSWORD, TYPE, PRIVILEGE, PHONE, NAME, HEAD_PIC, ACCOUNT_BALANCE, SEX, EMAIL, CHANGE_TYPE
+    </sql>
+
+
+</mapper>

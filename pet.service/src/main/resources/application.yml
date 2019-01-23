@@ -1,0 +1,42 @@
+server: 
+  port: 8080
+ 
+spring: 
+  application:
+    name: pet-service
+  datasource:   #配置数据库信息
+    type: com.alibaba.druid.pool.DruidDataSource    
+    driver-class-name: org.gjt.mm.mysql.Driver      
+    url: jdbc:mysql://localhost:3306/pet?useUnicode=true&characterEncoding=utf-8      
+    username: root                                  
+    password: a123456                                
+    dbcp2:                                          
+      min-idle: 5                                   
+      initial-size: 5                               
+      max-total: 5                                  
+      max-wait-millis: 200        
+      
+#配置eureka信息
+eureka: 
+  client: 
+    service-url: 
+      defaultZone: http://localhost:8888/eureka
+  instance:
+    instance-id: petService.com
+    prefer-ip-address: true 
+
+mybatis-plus:
+  type-aliases-package: sgf.pet.user.entity
+  mapper-locations:
+    - classpath*:mapper/*.xml 
+  configuration:
+    map-underscore-to-camel-case: true
+    
+#配置展示操作的sql语句    
+logging:
+  level:
+     sgf.pet.user.dao: debug
+  
+info:
+  app.name: sgf
+  company.name: www.sgf.com
